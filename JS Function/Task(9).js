@@ -1,28 +1,24 @@
-let numberofChildren,partnerName,location,jobTitle;
+let numberofChildren,partnerName,jobTitle,yourLocation;
 partnerName=prompt("Your partner name: ");
-    numberofChildren=prompt("number of children: ");
-    location=prompt("location: ");
-    jobTitle=prompt("job title: ");
-function tellFortune(numberofChildren,partnerName,location,jobTitle) {
+numberofChildren=prompt("number of children: ");
+jobTitle=prompt("job title: ");
+yourLocation=prompt("your location: ")
+function tellFortune(numberofChildren,partnerName,yourLocation,jobTitle) {
     let string="";
-    string=`You will be a ${jobTitle} in ${location}, and married to ${partnerName} with ${numberofChildren} kids.`;
+    string=`You will be a ${jobTitle} in ${yourLocation}, and married to ${partnerName} with ${numberofChildren} kids.`;
     console.log(string);
     document.getElementById("fullName").innerHTML=string;
 }
 
-tellFortune(numberofChildren,partnerName,location,jobTitle);
+tellFortune(numberofChildren,partnerName,yourLocation,jobTitle);
 
 
-numberofChildren,partnerName,location,jobTitle;
-partnerName=prompt("Your partner name: ");
-    numberofChildren=prompt("number of children: ");
-    location=prompt("location: ");
-    jobTitle=prompt("job title: ");
-let tellFortuneArrow=(numberofChildren,partnerName,location,jobTitle) => {
+
+let tellFortuneArrow=(numberofChildren,partnerName,yourLocation,jobTitle) => {
     let string="";
-    string=`You will be a ${jobTitle} in ${location}, and married to ${partnerName} with ${numberofChildren} kids.`;
+    string=`You will be a ${jobTitle} in ${yourLocation}, and married to ${partnerName} with ${numberofChildren} kids.`;
     console.log(string);
     document.getElementById("fullNameTwo").innerHTML=string;
 }
 
-tellFortuneArrow(numberofChildren,partnerName,location,jobTitle);
+tellFortuneArrow(numberofChildren,partnerName,yourLocation,jobTitle);

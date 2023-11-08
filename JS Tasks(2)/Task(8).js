@@ -8,9 +8,6 @@ function fullName(firstName,lastName) {
 }
 fullName(firstName,lastName);
 
-firstName=prompt("firstName: ");
-lastName=prompt("lastName: ");
-string="";
 let fullNameArrow=(firstName,lastName) => {
     string=`${firstName} ${lastName}`
     console.log(string);

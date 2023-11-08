@@ -8,8 +8,6 @@ function triangle(base,height) {
 alert(triangle(base,height));
 
 
-base=prompt("Enter triangle base: ");
-height=prompt("Enter triangle height: ");
 let triangleArrow=(base,height) => {
     let area= 0.5 * base * height;
     return area;

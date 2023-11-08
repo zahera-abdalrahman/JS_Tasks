@@ -9,8 +9,7 @@ function calculateDogAge(dog) {
 
 calculateDogAge(dog);
 
-dog=prompt("your dog age: ")
-string="";
+
 calculateDogAgeArrow=(dog) => {
   let dogAge = dog * 7;
   string=`Your doggie is ${dogAge} years old in human years!`;
