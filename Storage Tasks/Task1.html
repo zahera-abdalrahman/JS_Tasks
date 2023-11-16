@@ -24,14 +24,15 @@
     justify-content: center;
     align-items: center;
     width: 40%;
-    height: 600px;
+    height: 650px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 20px;
     box-shadow: 2px 3px 24px 0px rgba(206,197,197,0.75) inset;
 }
 .container-form{
     width: 60%;
+    margin-top: 20px;
 }
 
 h1,p,label{
@@ -96,8 +97,11 @@ form input[type="text"],input[type="number"],textarea{
         <textarea name="brief" id="description" cols="30" rows="10"></textarea>
         <br>
 
-        <label for="university">Major and University</label>
+        <label for="university">University</label>
         <input type="text" name="university" id="university">
+
+        <label for="Major">Major</label>
+        <input type="text" name="Major" id="Major">
         <br>
 
         <label for="java">
@@ -130,6 +134,7 @@ form input[type="text"],input[type="number"],textarea{
         let gender = document.querySelector('input[name="gender"]:checked').value;
         let description = document.getElementById('description').value;
         let university = document.getElementById('university').value;
+        let major = document.getElementById('Major').value;
 
         var programmingLanguages = []; 
         var checkboxes = document.querySelectorAll(".programming");
@@ -145,6 +150,7 @@ form input[type="text"],input[type="number"],textarea{
             gender: gender,
             description: description,
             university: university,
+            major:major,
             programming: programmingLanguages
         };
 
@@ -162,6 +168,7 @@ form input[type="text"],input[type="number"],textarea{
             <p>gender: ${information.gender}</p>
             <p>Description: ${information.description}</p>
             <p>University: ${information.university}</p>
+            <p>Major: ${information.major}</p>
             <p>Programming Languages: ${information.programming.join(',')}</p>
         `;
         document.body.appendChild(info);
