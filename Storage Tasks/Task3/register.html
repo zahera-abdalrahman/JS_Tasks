@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+    body{
     background-color: #7F00FF;
     padding: 0;
     margin: 0;
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50%;
     grid-template-rows: 1fr;
     font-family: 'Inter', sans-serif;
     align-items: center;
-    
+    justify-content: center;
 }
 
 .container{
@@ -43,7 +43,7 @@ h1,p,label{
     display: block;
     margin: 30px auto;
     border-style: none;
-    background-color: skyblue;
+    background-color: #0047AB;
     padding: 10px;
     border-radius: 10px;
     color: white;
@@ -57,8 +57,21 @@ form input[type="text"],input[type="email"],input[type="password"]{
     margin-bottom: 10px;
     padding: 10px;
 } 
+#register-note{
+    text-align: center;
+    width: 100%;
+}
+span,a{
+    font-size: 15px;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #0047AB;
+}
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="container-form">
@@ -75,35 +88,22 @@ form input[type="text"],input[type="email"],input[type="password"]{
 
         <label for="confirm-password">Confirm Password</label><br>
         <input type="password"id="confirm-password"><br>
-
-        <input type="submit" value="Submit" id="register" class="btn">
+        <span>Have an account </span><a href="login.html">Login</a>
+        <input type="button" value="Submit" id="register" class="btn">
     </form>
-</div>
-</div>
-<div class="container">
-    <div class="container-form">
-    <form >
-        <h1>login</h1>
-        <label for="login-email">Email</label><br>
-        <input type="email" id="login-email"><br>
-
-        <label for="password">Password</label><br>
-        <input type="password" id="login-password"><br>
-
-        <input type="submit" value="Submit" id="login" class="btn">
-    </form>
+    <div id="registerNote"></div>
 </div>
 </div>
 
-
-    <script>
+<script>
         let userInfo={};
+        let registerNote=document.getElementById("registerNote");
         let submit=document.getElementById("register").addEventListener('click',()=>{
             let userName=document.getElementById("username").value;
             let email=document.getElementById("email").value;
             let password=document.getElementById("password").value;
             let confirmPassword=document.getElementById("confirm-password").value;
-
+            
             if(password === confirmPassword)
             {
                 userInfo = {
@@ -113,29 +113,16 @@ form input[type="text"],input[type="email"],input[type="password"]{
                 confirmPassword: confirmPassword
             };
                 localStorage.setItem('user', JSON.stringify(userInfo));
-                alert("Regiter Success!");
+                registerNote.innerHTML="Register Success!";
+                registerNote.style.color="green";
             }
             else
             {
-                alert("Regiter Failed!");
+                registerNote.innerHTML="Register Failed!";
+                registerNote.style.color="red";
             }
         });
 
-
-        let submitLogIn=document.getElementById("login").addEventListener('click',()=>{
-            let loginEmail=document.getElementById("login-email").value;
-            let loginPassword=document.getElementById("login-password").value;
-            let storedUser = JSON.parse(localStorage.getItem('user'));
-            if(storedUser.email === loginEmail && storedUser.password === loginPassword)
-            {
-                alert("Login Success!");
-            }
-            else
-            {
-                alert("Login Failed!");
-            }
-        });
-
-    </script>
+</script>
 </body>
 </html>
